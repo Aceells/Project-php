@@ -99,5 +99,7 @@ switch($model) {
         include 'views/barang_list.php';
         break;
     }
+  case "transaksi":
+    break;
 }
 ?>
