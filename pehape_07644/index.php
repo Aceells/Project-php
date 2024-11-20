@@ -2,6 +2,7 @@
 // require_once('domain_object/node_role.php');
 require_once 'model/role_model.php';
 session_start();
+// session_destroy();
 
 // $objRole = [];
 // $objRole[] = new Role(1,"Super Admin","Mengatur Admin",1);

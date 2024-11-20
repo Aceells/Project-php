@@ -46,14 +46,15 @@
                     </div>
 
                     <!-- Role Status -->
-                    <!-- <div class="mb-4">
-                        <label for="role_status" class="block text-gray-700 text-sm font-bold mb-2">Role Status:</label>
-                        <select id="role_status" name="role_status" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <div class="mb-4">
+                        <label for="jumlah_barang" class="block text-gray-700 text-sm font-bold mb-2">Quantity:</label>
+                        <!-- <select id="role_status" name="role_status" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                             <option value="">Pilih Status</option>
                             <option value=1>Active</option>
                             <option value=0>Inactive</option>
-                        </select>
-                    </div> -->
+                        </select> -->
+                        <input type="number" id="jumlah_barang" name="jumlah_barang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Qty Barang" required>
+                    </div>
 
                     <!-- Submit Button -->
                     <div class="flex items-center justify-between">

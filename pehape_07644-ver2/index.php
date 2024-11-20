@@ -70,7 +70,8 @@ switch($model) {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           $barangName = $_POST['barang_name'];
           $hargaBarang = $_POST['harga_barang'];
-          $obj_barang->addBarang($barangName, $hargaBarang);
+          $jumlahBarang = $_POST['jumlah_barang'];
+          $obj_barang->addBarang($barangName, $hargaBarang, $jumlahBarang);
           header('location: index.php?modul=barang');
         } else {
           include 'views/barang_input.php';
@@ -88,18 +89,23 @@ switch($model) {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           $barangName = $_POST['barang_name'];
           $hargaBarang = $_POST['harga_barang'];
-          $obj_barang->updateBarang($id, $barangName, $hargaBarang);
+          $jumlahBarang = $_POST['jumlah_barang'];
+          $obj_barang->updateBarang($id, $barangName, $hargaBarang, $jumlahBarang);
           header('location: index.php?modul=barang');
         } else {
           include 'views/barang_list.php';
         }
-      break;
+        break;
       default:
         $barangs = $obj_barang->getAllBarangs();
         include 'views/barang_list.php';
         break;
     }
+  case "user":
+    // --COMING SOON--
+    break;
   case "transaksi":
+    // --COMING SOON--
     break;
 }
 ?>

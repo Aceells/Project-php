@@ -36,7 +36,7 @@
                         <th class="w-1/12 py-3 px-4 uppercase font-semibold text-sm">ID Barang</th>
                         <th class="w-1/4 py-3 px-4 uppercase font-semibold text-sm">Nama Barang</th>
                         <th class="w-1/3 py-3 px-4 uppercase font-semibold text-sm">Harga Barang</th>
-                        <!-- <th class="w-1/6 py-3 px-4 uppercase font-semibold text-sm">Role Status</th> -->
+                        <th class="w-1/6 py-3 px-4 uppercase font-semibold text-sm">Quantity</th>
                         <th class="w-1/6 py-3 px-4 uppercase font-semibold text-sm">Actions</th>
                     </tr>
 
@@ -48,7 +48,7 @@
                         <td class="py-3 px-4 text-blue-600"><?php echo htmlspecialchars($barang->idBarang);?></td>
                         <td class="w-1/4 py-3 px-4"><?php echo htmlspecialchars($barang->nameBarang);?></td>
                         <td class="w-1/3 py-3 px-4"><?php echo htmlspecialchars($barang->hargaBarang);?></td>
-                        <!-- <td class="w-1/6 py-3 px-4"><?php echo htmlspecialchars($role->role_status);?></td> -->
+                        <td class="w-1/6 py-3 px-4"><?php echo htmlspecialchars($barang->jumlahBarang);?></td>
                         <td class="w-1/6 py-3 px-4">
                             <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded mr-2">
                                 <a href="index.php?modul=barang&fitur=update&id=<?php echo htmlspecialchars($barang->idBarang); ?>">Update</a>
