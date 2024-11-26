@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input User</title>
+    <title>Update User</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
@@ -20,24 +20,25 @@
         <div class="flex-1 p-8">
             <!-- Formulir Input Role -->
             <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-bold mb-6 text-gray-800">Input User</h2>
-                <form action="index.php?modul=user&fitur=add" method="POST">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">Update User</h2>
+                <form action="index.php?modul=user&fitur=edit&idUser=<?php echo htmlspecialchars($user->user_id); ?>" method="POST">
                     <!-- Nama Role -->
                     <div class="mb-4">
-                        <label for="role_name" class="block text-gray-700 text-sm font-bold mb-2">Username:</label>
-                        <input type="text" id="user_name" name="user_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Username" required>
+                        <label for="user_name" class="block text-gray-700 text-sm font-bold mb-2">Username:</label>
+                        <input type="text" id="user_name" name="user_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Username" required
+                        value="<?php echo htmlspecialchars($user->username)?>">
                     </div>
 
                     <!-- Role Deskripsi -->
                     <div class="mb-4">
-                        <label for="role_description" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
-                        <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10" placeholder="Masukkan Password" required>
-                        <!-- <textarea id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Password" rows="3" required></textarea> -->
+                        <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
+                        <textarea id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Password" rows="3" required
+                        ><?php echo htmlspecialchars($user->password)?></textarea>
                     </div>
 
                     <!-- Role Status -->
                     <div class="mb-4">
-                        <label for="role_status" class="block text-gray-700 text-sm font-bold mb-2">Role Name:</label>
+                        <label for="role_name" class="block text-gray-700 text-sm font-bold mb-2">Role Name:</label>
                         <select id="role_name" name="role_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                             <option value="">Pilih Status</option>
                             <?php foreach ($roles as $role) { ?>
