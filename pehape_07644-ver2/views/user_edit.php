@@ -32,8 +32,10 @@
                     <!-- Role Deskripsi -->
                     <div class="mb-4">
                         <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
-                        <textarea id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Password" rows="3" required
-                        ><?php echo htmlspecialchars($user->password)?></textarea>
+                        <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                        value="<?php echo htmlspecialchars($user->password); ?>" required>
+                        <!-- <textarea id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Password" rows="3" required
+                        ><?php echo htmlspecialchars($user->password)?></textarea> -->
                     </div>
 
                     <!-- Role Status -->

@@ -5,11 +5,15 @@
             <span class="text-white font-bold text-xl">oka POS</span>
         </div>
         <div class="text-white">
-            <span class="mr-4">Lintang Pratama Putra (Acel)</span>
-            <span class="mr-4">07644</span>
-            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                Logout
-            </button>
+            <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
+                <span class="mr-4"><?php echo htmlspecialchars($_SESSION['username']); ?></span>
+                <span class="mr-4"><?php echo htmlspecialchars($_SESSION['role']); ?></span>
+                <button onclick="window.location.href='logout.php'" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    Logout
+                </button>
+            <?php else: ?>
+                <span class="mr-4">Not logged in</span>
+            <?php endif; ?>
         </div>
     </div>
 </nav>

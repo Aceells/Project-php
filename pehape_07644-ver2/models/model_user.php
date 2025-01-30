@@ -15,14 +15,18 @@ class modelUser {
         }
     }
 
-    public function addUser($uname, $pass, $role) {
-        $user = new \User($this->nextId++, $uname, $pass, $role);
+    public function addUser($uname, $pass, $role, $name) {
+        $user = new \User($this->nextId++, $uname, $pass, $role, $name);
         $this->users[] = $user;
         $this->saveToSession();
     }
 
     private function saveToSession() {
         $_SESSION['users'] = serialize($this->users);
+    }
+
+    public function getAllUsers(){
+        return $this->users;
     }
 
     public function getUsers() {
@@ -32,9 +36,9 @@ class modelUser {
     private function initializeDefaultUsers() {
         $obj_role1 = new \Role(1, "Admin", "Administration", 1);
         $obj_role2 = new \Role(2, "Kasir", "Kasir", 1);
-        $this->addUser('Acel', '666', $obj_role1);
-        $this->addUser('Chax', '666', $obj_role1);
-        $this->addUser('Merikh', '666', $obj_role2);
+        $this->addUser('Acel', '666', $obj_role1, 'anu');
+        $this->addUser('Chax', '666', $obj_role1, 'babi');
+        $this->addUser('Merikh', '666', $obj_role2, 'haram');
     }
 
     public function getUserById($userid) {
@@ -46,12 +50,22 @@ class modelUser {
         return null;
     }
 
-    public function updateUser($userid, $username, $password, $role) {
+    public function getUserByName($name) {
+        foreach ($this->users as $user) {
+            if ($user->name == $name) {
+                return $user;
+            }
+        }
+        return null;
+    }
+
+    public function updateUser($userid, $username, $password, $role, $name) {
         $userlokal = $this->getUserById($userid);
         if ($userlokal != null) {
             $userlokal->username = $username;
             $userlokal->password = $password;
             $userlokal->role = $role;
+            $userlokal->name = $name;
             $this->saveToSession();
             return true;
         }

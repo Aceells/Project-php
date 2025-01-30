@@ -5,11 +5,14 @@ class User {
     public $password;
     public $role;
 
-    function __construct($user_id, $username, $password, $role) {
+    public $name;
+
+    function __construct($user_id, $username, $password, $role, $name) {
         $this->user_id = $user_id;
         $this->username = $username;
         $this->password = $password;
         $this->role = $role;
+        $this->name = $name;
     }
 }
 ?>
